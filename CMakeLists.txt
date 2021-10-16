@@ -21,9 +21,9 @@ set(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} -std=c++17 -fPIE -fPIC -fexceptions -frtti
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 # Manually choose the compiler rather than letting cmake make the guess
 # Warning: Don't use clang-cpp-13, it throws a clang: linker warning
-set(CMAKE_CXX_COMPILER clang++-13)
+set(CMAKE_CXX_COMPILER clang++-14)
 # Warning: Even if we don't use C but some libraries might and then cmake have to make a guess again
-set(CMAKE_C_COMPILER clang-13)
+set(CMAKE_C_COMPILER clang-14)
 
 # Dynamic configuration options
 option(ENABLE_TEST "Enable Testing" OFF)

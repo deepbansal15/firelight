@@ -7,7 +7,7 @@
     "editor.defaultFormatter": "ms-vscode.cpptools",
     "editor.formatOnSave": true
   },
-  "C_Cpp.clang_format_path": "${workspaceFolder}/../lib/linux_centos7_x86_64/llvm/bin/clang-format",
+  "C_Cpp.clang_format_path": "/usr/bin/clang-format",
   "files.associations": {
     "cctype": "cpp",
     "clocale": "cpp",
