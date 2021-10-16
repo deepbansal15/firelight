@@ -11,3 +11,17 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+
+#pragma once
+
+namespace firelight {
+namespace allocator {
+// Block allocator
+// Act as a wrapper on top of malloc/mmap and maintains a track just to notify
+// in case of a leak.
+// Desired capabilites: Recycle blocks
+
+struct BlockAllocator {};
+
+}  // namespace allocator
+}  // namespace firelight

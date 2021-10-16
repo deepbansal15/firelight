@@ -15,7 +15,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} -W -Wpointer-arith -Wreturn-type -Wcast-qu
 set(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} -Wswitch -Wunused-parameter -Wcast-align -Wchar-subscripts -Winline -Wredundant-decls")
 set(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} -std=c++17 -fPIE -fPIC -fexceptions -frtti")
 
-#TODO: Optimization flags and dumping of instruction set to debug further
+# TODO: Optimization flags and dumping of instruction set to debug further.
 
 # Export the compile commands to better configure visual studio code.
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -48,3 +48,7 @@ if(ENABLE_TEST)
   set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
   FetchContent_MakeAvailable(googletest)
 endif()
+
+# TODO: Add sanitizers and detailed instructions on how to use these sanitizers.
+
+
