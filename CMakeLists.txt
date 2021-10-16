@@ -27,6 +27,7 @@ set(CMAKE_C_COMPILER clang-14)
 
 # Dynamic configuration options
 option(ENABLE_TEST "Enable Testing" OFF)
+option(ENABLE_BENCHMARK "Enable Benchmark" OFF)
 
 project(firelight
         DESCRIPTION "Firelight"
@@ -49,6 +50,25 @@ if(ENABLE_TEST)
   FetchContent_MakeAvailable(googletest)
 endif()
 
+if(ENABLE_BENCHMARK)
+set(BENCHMARK_ENABLE_TESTING OFF)
+set(BENCHMARK_DOWNLOAD_DEPENDENCIES OFF)
+set(BENCHMARK_ENABLE_GTEST_TESTS OFF)
+add_subdirectory(thirdparty/benchmark)
+add_executable(firelight_benchmark benchmark_exp.cpp)
+target_link_libraries(firelight_benchmark benchmark::benchmark)
+endif()
+
 # TODO: Add sanitizers and detailed instructions on how to use these sanitizers.
+# TODO: Add test and benchmark next to each source code file, for doing add cmake 
+#       functions add_test(), add_library(), add_benchmark()
+# TODO: Add glog, freeimage
+# TODO: Add ptex
+# TODO: Add code from render engine to import full fbx scenes.
+
+list(APPEND CMAKE_MODULE_PATH
+  ${CMAKE_CURRENT_LIST_DIR}/cmake
+)
+include(firelight_helpers)
 
 
