@@ -12,3 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+Memory - Allocators (Start with simple and keep adding more and more)
+Allocators - Reentrant allocator (refer folly)
+ScratchAllocator with a fixed buffer size with a backing allocator.
+
+String/StringView - Abseil if required
+Add signal handler, stack tracer, symbolizer and demangler
+
+
+17 October 2021
+Start with the geometry classes, along with test cases (only necessary ones)
+
+

@@ -57,7 +57,8 @@
     "stdexcept": "cpp",
     "streambuf": "cpp",
     "cinttypes": "cpp",
-    "typeinfo": "cpp"
+    "typeinfo": "cpp",
+    "cfloat": "cpp"
   },
   "licenser.license": "AL2",
   "licenser.author": "Deep Bansal",
