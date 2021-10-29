@@ -11,9 +11,9 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Note: Even after choosing c++17, -std=gnu++17 still exists in the commands
 set(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS}  -Wall -Wextra -pedantic -Wshadow -Werror -Wconversion")
-set(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} -W -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings")
-set(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} -Wswitch -Wunused-parameter -Wcast-align -Wchar-subscripts -Winline -Wredundant-decls")
-set(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} -std=c++17 -fPIE -fPIC -fexceptions -frtti")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -W -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wswitch -Wunused-parameter -Wcast-align -Wchar-subscripts -Winline -Wredundant-decls")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -fPIE -fPIC -fexceptions -frtti")
 
 # TODO: Optimization flags and dumping of instruction set to debug further.
 
@@ -38,6 +38,8 @@ find_package(Threads REQUIRED)
 
 add_executable(${PROJECT_NAME} main.cpp)
 target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
+# Generate assembly and intermediate files
+set_target_properties(${PROJECT_NAME} PROPERTIES COMPILE_FLAGS "-save-temps -save-stats") 
 
 if(ENABLE_TEST)
   include(FetchContent)
@@ -69,6 +71,6 @@ endif()
 list(APPEND CMAKE_MODULE_PATH
   ${CMAKE_CURRENT_LIST_DIR}/cmake
 )
-include(firelight_helpers)
+# include(firelight_helpers)
 
 
